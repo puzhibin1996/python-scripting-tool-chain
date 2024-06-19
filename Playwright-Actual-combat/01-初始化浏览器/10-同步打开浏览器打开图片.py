@@ -28,17 +28,6 @@ class BrowserController:
         except Exception as e:
             print(f"Failed to connect to browser: {e}")
             self.page = None
-    # def perform_actions(self):
-    #     if self.page:
-    #         # 在这里执行点击事件或其它事件
-    #         self.page.click('kw')  # 替换为实际的选择器
-    #         print("Performed actions on the page")
-    #
-    # def close(self):
-    #     if self.browser:
-    #         self.browser.close()
-    #     if self.playwright:
-    #         self.playwright.stop()
 
     def input_text(self):
         if self.page:
@@ -63,30 +52,6 @@ class BrowserController:
         if self.page:
             self.page.query_selector('//*[@id="1"]/div/h3/a').click()
 
-    def download_img(self):
-        if self.page:
-            image_elements=self.page.query_selector_all('img')
-            image_urls=[img.get_attribute('src') for img in image_elements]
-
-            os.makedirs('./images', exist_ok=True)
-            # 下载图片
-            for idx, img_url in enumerate(image_urls):
-                if img_url:
-                    try:
-                        img_data = requests.get(img_url).content
-                        # 确定图像扩展名
-                        ext = img_url.split('.')[-1]
-                        if '?' in ext:
-                            ext = ext.split('?')[0]
-                        with open(f'downloaded_images/image_{idx}.{ext}', 'wb') as handler:
-                            handler.write(img_data)
-                        print(f"Downloaded image_{idx}.{ext}")
-                    except Exception as e:
-                        print(f"Failed to download {img_url}: {e}")
-
-
-
-
 
 if __name__ == '__main__':
     port = 6666
@@ -96,13 +61,9 @@ if __name__ == '__main__':
     controller.connect_to_browser_and_visit_url('https://www.baidu.com')
     if controller.page:
         controller.input_text()
-
         controller.input_btn()
         time.sleep(2)
-
-
         controller.scrollTo_move()
         controller.get_img()
-        controller.download_img()
 
 
