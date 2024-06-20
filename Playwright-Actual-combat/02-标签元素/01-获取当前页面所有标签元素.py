@@ -74,10 +74,10 @@ class BrowserController:
             print("成功触发鼠标滚轮！")
         else:
             print("无法触发鼠标滚轮，请检查浏览器是否连接成功！")
-    # 当前页面取消禁音状态。 //*[@id="sliderVideo"]/div[1]/div[1]/div/xg-controls/xg-inner-controls/xg-right-grid/xg-icon[3]/div/svg[3]
+    # 当前页面取消禁音状态。
     def fun_unmute(self):
         if self.page:
-            self.page.evaluate("document.querySelector('video').muted=false")
+            self.page.evaluate("document.querySelector('video').muted=false")# 这里是js代码块，所以需要用evaluate方法执行
             print("成功取消禁音状态！")
         else:
             print("无法取消禁音状态，请检查浏览器是否连接成功！")
