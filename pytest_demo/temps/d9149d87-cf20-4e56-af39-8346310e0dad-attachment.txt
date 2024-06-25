@@ -1,0 +1,3 @@
+setup_class called
+test_1
+teardown_class called
