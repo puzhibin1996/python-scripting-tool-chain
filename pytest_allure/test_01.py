@@ -13,8 +13,6 @@ class TestApi:
     def test_02(self):
         print("Running test_02")
 
-if __name__ == '__main__':
-    pytest.main(['--alluredir', './pytest_allure/allure-results/temps'])
-    time.sleep(2)
-    os.system("allure generate ./pytest_allure/allure-results/temps -o ./pytest_allure/allure-results/report --clean")
-    os.system("allure open ./pytest_allure/allure-results/report")
+
+
+
