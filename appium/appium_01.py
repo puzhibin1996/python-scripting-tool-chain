@@ -1,6 +1,8 @@
 import time
-from appium import webdriver
+
 import logging
+
+from appium.webdriver import webdriver
 
 # Enable logging
 logging.basicConfig(level=logging.DEBUG)
