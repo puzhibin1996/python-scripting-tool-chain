@@ -10,9 +10,9 @@
 #
 # # 连接Appium Server，初始化自动化环境
 # driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+from appium.webdriver import webdriver
 
-
-from appium_04 import webdriver
+# from appium_04 import webdriver
 
 # Appium 服务器地址和端口
 appium_server = 'http://localhost:4723/wd/hub'
