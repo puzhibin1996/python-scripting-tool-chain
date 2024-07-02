@@ -1,0 +1,10 @@
+from selenium import webdriver
+driver = webdriver.Edge()
+driver.get("http://www.python.org")
+x=driver.get_window_position().get('x')
+y=driver.get_window_position().get('y')
+print(x,y)
+position = driver.get_window_position()
+x1=position.get('x')
+y1=position.get('y')
+print(x1,y1)
